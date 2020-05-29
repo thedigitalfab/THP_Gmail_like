@@ -1,0 +1,29 @@
+<!-- email index view -->
+
+<!-- Title Line -->
+<div class="row">
+    <!-- left column: emails list -->
+    <div class="col-4">
+        column A
+    </div>
+    <!-- right column: email view -->
+    <div class="col-8">
+        column B
+    </div>
+</div>
+
+<!-- Content Line -->
+<div class="row">
+    <!-- left column: emails list -->
+    <div class="col-4">
+        <ul id="list_email">
+            <% @emails.each do |email| %>
+                <%= render 'email', email: email %>
+            <% end %>
+        </ul>
+    </div>
+    <!-- right column: email view -->
+    <div class="col-8" id="view_email">
+        <div id="email_placeholder"></div>
+    </div>
+</div>
