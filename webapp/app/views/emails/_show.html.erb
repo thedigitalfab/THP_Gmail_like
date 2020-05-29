@@ -12,3 +12,4 @@
         body: <%= email.body %>
     </p>
 </div>
+<%= link_to "Delete", email_path, confirm: 'Are you sure?', method: :delete, class: "btn btn-danger", remote: true %>

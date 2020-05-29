@@ -18,6 +18,7 @@ class EmailsController < ApplicationController
   def show
     ## Get email object by ID
     @email = Email.find(params[:id])
+    @email.update(flag_read: true)
     
     ## Response to request
     respond_to do |format|
@@ -49,7 +50,7 @@ class EmailsController < ApplicationController
 
   def create
     ## Create email object with given values
-    @email = Email.create(from: Faker::Name.name, to: "MichMich", object: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4))
+    @email = Email.create(from: Faker::Name.name, to: "MichMich", object: Faker::Lorem.sentence, body: Faker::Lorem.paragraph(sentence_count: 2, supplemental: true, random_sentences_to_add: 4), flag_read: false)
     
     ## Response to request
     respond_to do |format|

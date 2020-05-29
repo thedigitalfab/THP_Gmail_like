@@ -1,1 +1,3 @@
-document.getElementById("email_placeholder").innerHTML = "<%= escape_javascript(render 'show', email: @email) %>"
+// var mail = document.getElementById("list_email_<%= @email.id %>").childNodes[1].childNodes[1].removeAttribute("");
+document.getElementById("list_email_<%= @email.id %>").querySelector("span").classList.remove("font-weight-bold");
+document.getElementById("email_placeholder").innerHTML = "<%= escape_javascript(render 'show', email: @email) %>";

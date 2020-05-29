@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 2020_05_28_092850) do
     t.string "to"
     t.string "object"
     t.text "body"
+    t.boolean "flag_read"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

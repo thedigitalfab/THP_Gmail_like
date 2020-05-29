@@ -1,1 +1,9 @@
-<li id="list_email_<%= email.id %>"><%= link_to email.object, email_path(email), remote: true %></li>
+<li id="list_email_<%= email.id %>">
+    <%= link_to email_path(email), remote: true do %>
+        <%unless email.flag_read%>
+            <span class="font-weight-bold"><%=email.object%></span>
+        <%else%>
+            <span><%=email.object%></span>
+        <% end %>
+    <% end %>
+</li>

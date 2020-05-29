@@ -6,6 +6,8 @@ class CreateEmails < ActiveRecord::Migration[6.0]
       t.string :to
       t.string :object
       t.text :body
+      t.boolean :flag_read
+      
 
       ## email timestamps:
       t.timestamps
